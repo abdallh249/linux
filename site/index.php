@@ -1,17 +1,17 @@
 <?php
-// index.php
+
 include 'connect.php';
 
-// Check if database connection succeeded.
+
 if ($conn->connect_error) {
-    // Print an alert with the error
+    
     echo "<div class='alert alert-danger text-center' role='alert'>
             <strong>Database Connection Failed:</strong> " . htmlspecialchars($conn->connect_error) . "
           </div>";
     exit;
 }
 
-// Optionally, check if we are using the right DB (if not included in connect.php)
+
 if (!$conn->select_db("mydb")) {
     echo "<div class='alert alert-danger text-center' role='alert'>
             <strong>Error selecting database:</strong> " . htmlspecialchars($conn->error) . "
@@ -26,7 +26,7 @@ if (!$conn->select_db("mydb")) {
   <meta charset="UTF-8">
   <title>Simple Dictionary App</title>
 
-  <!-- Bootstrap 5 (CDN) -->
+ 
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -34,16 +34,16 @@ if (!$conn->select_db("mydb")) {
 
   <style>
     body {
-      background-color: #f8f9fa; /* light gray background */
+      background-color: #f8f9fa; 
     }
     .navbar-brand strong {
-      color: #0d6efd; /* custom brand color */
+      color: #0d6efd; 
     }
   </style>
 </head>
 
 <body>
-  <!-- Navigation Bar -->
+
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -52,7 +52,7 @@ if (!$conn->select_db("mydb")) {
     </div>
   </nav>
 
-  <!-- Main Content -->
+  
   <div class="container py-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
