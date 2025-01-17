@@ -23,11 +23,30 @@ pipeline {
             }
         }
 
+        stage('Install Docker Compose') {
+            steps {
+                script {
+                    // Install docker-compose at runtime if it's not present
+                    sh '''
+                        if ! command -v docker-compose &> /dev/null
+                        then
+                            echo "Docker Compose not found. Installing..."
+                            curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" \
+                                -o /usr/local/bin/docker-compose
+                            chmod +x /usr/local/bin/docker-compose
+                            echo "Docker Compose installed successfully."
+                        else
+                            echo "Docker Compose is already installed."
+                        fi
+                    '''
+                }
+            }
+        }
+
         stage('Build') {
             steps {
                 script {
                     // Build Docker images as defined in docker-compose.yml
-                    // Using --no-cache is optional but can help avoid caching issues
                     sh 'docker-compose build --no-cache'
                 }
             }
@@ -36,8 +55,8 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    // (Optional) Example test command inside the 'web' container
-                    // If you don't have a test file yet, comment out or remove this step
+                    // (Optional) Run a test command inside the 'web' container
+                    // Comment out if you don't have a test file
                     sh 'docker-compose run --rm web php /var/www/html/your-test-file.php'
                 }
             }
