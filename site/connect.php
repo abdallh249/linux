@@ -1,7 +1,7 @@
 <?php
-// connect.php
 
-$servername = "db";       // Because our service is named "db" in docker-compose.yml
+
+$servername = "db";       
 $username   = "root";
 $password   = "123";
 $dbname     = "mydb";
