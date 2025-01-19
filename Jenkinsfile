@@ -50,13 +50,7 @@ pipeline {
             }
         }
 
-        // stage('Test') {
-        //     steps {
-        //         script {
-        //             sh 'docker-compose run '
-        //         }
-        //     }
-        // }
+        
 
         stage('Deploy') {
             steps {
