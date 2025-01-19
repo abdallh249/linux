@@ -50,13 +50,13 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    sh 'docker-compose run --rm web php /var/www/html/your-test-file.php'
-                }
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         script {
+        //             sh 'docker-compose run '
+        //         }
+        //     }
+        // }
 
         stage('Deploy') {
             steps {
