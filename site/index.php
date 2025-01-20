@@ -24,7 +24,7 @@ if (!$conn->select_db("mydb")) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Dictionary App</title>
+  <title>Simple  App</title>
 
  
   <link
