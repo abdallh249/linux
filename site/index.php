@@ -47,7 +47,7 @@ if (!$conn->select_db("mydb")) {
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <strong>My Dictionary</strong>
+        <strong>gaza</strong>
       </a>
     </div>
   </nav>
